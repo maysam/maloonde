@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>URL HEALTH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .maindiv .item {
+        height: 500px;
+      }
+      .maindiv img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .maindiv {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .maindiv .container {
+
+      }
+      .maindiv .item {
+        height: 300px;
+      }
+      .maindiv img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    .vertical .carousel-inner {
+	  height: 100%;
+	}
+
+	.carousel.vertical .item {
+	  -webkit-transition: 0.6s ease-in-out top;
+	     -moz-transition: 0.6s ease-in-out top;
+	      -ms-transition: 0.6s ease-in-out top;
+	       -o-transition: 0.6s ease-in-out top;
+	          transition: 0.6s ease-in-out top;
+	}
+
+	.carousel.vertical .active {
+	  top: 0;
+	}
+
+	.carousel.vertical .next {
+	  top: 100%;
+	}
+
+	.carousel.vertical .prev {
+	  top: -100%;
+	}
+
+	.carousel.vertical .next.left,
+	.carousel.vertical .prev.right {
+	  top: 0;
+	}
+
+	.carousel.vertical .active.left {
+	  top: -100%;
+	}
+
+	.carousel.vertical .active.right {
+	  top: 100%;
+	}
+
+	.carousel.vertical .item {
+	    left: 0;
+	}
+
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="./assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+ 
+<div class="offset4 span4 container" style="margin:100px;">
+<div class="span5"> Url <input id="url" style="width:300px;"> <a id="add" class="btn-success btn-large">Add</a></div>
+<div>
+<table id="urls" class="table-striped">
+<thead>
+<tr>
+  <th>Url</th>
+  <th>Status</th>
+  <th>RT (ms)</th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+http://www.google.com
+</td>
+<td>
+<a href="#urls" class="btn-success">ok</a>
+</td>
+<td>20</td>
+<td><a href="">delete</a></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+ 
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assets/js/jquery-latest.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  var urls = [
+    {id:1, url:'http://www.cnet.com', status: 'ok', rt: '20'},
+    {id:2, url:'http://www.yahoo.com', status: 'ok', rt: '20'}
+  ]
+  var last_id = 2;
+  function add(url) {
+    urls.push({id: last_id++, url: url, status: 'pending', rt: ''})
+    reload()
+  }
+  function remove(id) {
+
+  }
+  function reload() {
+    $('#urls tbody tr').detach()
+    for (var i = urls.length - 1; i >= 0; i--) {
+      var tr = $('<tr>')
+      tr.append($('<td>').text(urls[i].url))
+      tr.append($('<td>').text(urls[i].status))
+      tr.append($('<td>').text(urls[i].rt))
+      tr.append($('<td>').append($('<a>').text('delete').data('id', urls[i].id)))
+      tr.appendTo($('#urls tbody'))
+    };
+  }
+
+  function check () {
+    for (var i = urls.length - 1; i >= 0; i--) {
+      $.ajax({
+        url: urls[i].url,
+        data: {},
+        complete: function(xhr, statusText){
+        console.log('ok = ',xhr, statusText)
+        urls[i].status = xhr.status 
+        },
+        complete: function (j) {
+          return function(xhr, statusText){
+              urls[j].status = xhr.status 
+              console.log('urls[j] = ', urls[j].status , '=' , xhr.status)
+            }
+        }(i),
+        error: function (j) {
+          return function(xhr, statusText, err){
+              urls[j].status = xhr.status 
+              console.log('urls[j] = ', urls[j].status , '=' , xhr.status)
+            }
+        }(i)
+
+      })
+    }
+  }
+
+    (function( $ ) {
+      reload()
+      check()
+      $.fn.maysam = function() {
+      
+        // Do your awesome plugin stuff here
+
+      };
+    })( jQuery );
+    </script>
+  </body>
+</html>
