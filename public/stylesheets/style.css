@@ -1,0 +1,47 @@
+body {
+	margin: 50px;
+	font-size: 14px;
+}
+table {
+	border: none;
+	border-collapse: collapse;
+}
+tr {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+td, th {
+	padding: 5px;
+	border: thin gray solid;
+	text-align: left;
+	width: 100px;
+}
+td:first-child {
+	width: 200px;
+}
+.status {
+	margin: 2px;
+	text-align: center;
+	color: white;
+	font-size: 12px;
+}
+.ok {
+	background-color: green
+}
+
+.error {
+	background-color: red
+}
+
+.pending {
+	background-color: orange
+}
+
+.delete-button {
+	text-align: center;
+}
+
+.delete-button a {
+	text-decoration: none;
+}
