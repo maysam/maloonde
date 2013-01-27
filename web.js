@@ -62,15 +62,20 @@ function monitor() {
     } }(urls[i], start)).on('error', function (url) { return function(e) {
       url.in_progress = false
       url.status = 'error'
+      emit()
     } }(urls[i]));;
   }
 }
-setInterval(monitor, 10*000)
 io.sockets.on('connection', function (socket) {
+  socket.on('reload', function (data) {
+    emit()
+  })
   socket.on('add', function (data) {
     var url = data.website_address
-    var url_record = {link:url, status:'pending', rt:'', in_progress:false}
-    urls.push(url_record)
+    if (url != '') {
+      var url_record = {link:url, status:'pending', rt:'', in_progress:false}
+      urls.push(url_record)
+    };
     emit()
   });
   socket.on('delete', function (data) {
@@ -78,3 +83,5 @@ io.sockets.on('connection', function (socket) {
     emit()
   });
 });
+setInterval(monitor, 1000)
+emit()

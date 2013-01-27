@@ -4,6 +4,7 @@ socket.on('status', function (data) {
 	urls = data
 	reload()
 });
+socket.emit('reload', {})
 function delete_link(index) {
 	socket.emit('delete', { index: index })
 }
@@ -34,16 +35,10 @@ $(function() {
 		$('#website_address').val('')
   	}
   })  	
-  reload()
-/*
-  socket.emit('add', { website_address: 'http://www.google.com' });
-  socket.emit('add', { website_address: 'http://www.yahoo.com' });
-  socket.emit('add', { website_address: 'http://www.internet.com' });
-  socket.emit('add', { website_address: 'http://www.irna.com' });
-*/
   $(document).keypress(function(e) {
 	    if(e.which == 13) {
 	        $('.submit-button').click()
 	    }
 	});
+    $('.submit-button').click()
 })

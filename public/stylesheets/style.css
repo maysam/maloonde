@@ -1,6 +1,6 @@
 body {
 	margin: 50px;
-	font-size: 14px;
+	font-size: 15px;
 }
 table {
 	border: none;
@@ -44,4 +44,18 @@ td:first-child {
 
 .delete-button a {
 	text-decoration: none;
+}
+input {
+	margin: 5px;
+	height: 25px;
+}
+input[type=submit] {
+	padding: 7px;
+	height: 35px;
+}
+input[type=text] {
+	width: 450px;
+}
+#urls {
+	display: none;
 }
