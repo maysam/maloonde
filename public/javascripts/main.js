@@ -11,7 +11,6 @@ function reload () {
 	if (urls.length == 0) {
 		$('#urls').hide()
 	} else {
-		$('#url_count').text(urls.length)
 		$('#urls tbody').empty()
 		for (var i = 0; i < urls.length; i++) {
 			var tr = $('<tr>')
@@ -30,15 +29,9 @@ function reload () {
 }
 $(function() {
   $('.submit-button').click(function () {
-  	function validateURL(textval) {
-	  var urlregex = new RegExp(
-	        "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
-	  return urlregex.test(textval);
-	}
-  	if (validateURL($('#website_address').val())) {
+  	if ($('#website_address').val() != '') {
 		socket.emit('add', { website_address: $('#website_address').val() });
-  	} else {
-  		alert('Invalid Url')
+		$('#website_address').val('')
   	}
   })  	
   reload()
